@@ -1,0 +1,9 @@
+
+Introdução
+Nest (NestJS) é um framework para a construção de aplicações Node.js eficientes e escaláveis do lado do servidor. Ele utiliza JavaScript progressivo, é desenvolvido com TypeScript e 
+oferece suporte total (mas ainda permite que os desenvolvedores codifiquem em JavaScript puro) e combina elementos de POO (Programação Orientada a Objetos), FP (Programação Funcional) e 
+FRP (Programação Reativa Funcional).
+
+Por dentro, o Nest usa estruturas robustas de servidor HTTP como o Express (o padrão) e, opcionalmente, pode ser configurado para usar o Fastify também!
+
+https://docs.nestjs.com/ 
