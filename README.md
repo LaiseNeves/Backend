@@ -9,6 +9,6 @@ https://dbeaver.io/
 
 https://docs.min.io/enterprise/aistor-object-store/
 
-https://typeorm.io/
+[https://typeorm.io/](https://typeorm.io/docs/getting-started) 
 
 https://swagger.io/solutions/api-documentation/ 
