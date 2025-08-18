@@ -83,7 +83,172 @@ info:
   medida em que é fornecido pelo CommonMark [...]
 
 - version é uma string arbitrária que especifica a versão da sua API (não confunda com a revisão do arquivo ou a openapiversão). Você pode usar versionamento semântico como major.minor.patch ou uma 
-  string arbitrária como 1.0-beta ou 2017-07-25 . infotambém suporta outras palavras-chave para informações de contato, licença, termos de serviço e outros detalhes.
+  string arbitrária como 1.0-beta ou 2017-07-25 . 
+
+- infotambém suporta outras palavras-chave para informações de contato, licença, termos de serviço e outros detalhes.
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Servidores
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Esta server sseção especifica o servidor da API e a URL base. Você pode definir um ou vários servidores, como produção e sandbox.
+
+servers:
+  - url: http://api.example.com/v1
+    description: Optional server description, e.g. Main (production) server
+  - url: http://staging-api.example.com
+    description: Optional server description, e.g. Internal staging server for testing
+
+Todos os caminhos da API são relativos à URL do servidor. No exemplo acima, /userssignifica http://api.example.com/v1/usersou http://staging-api.example.com/users, dependendo do servidor utilizado. 
+Para obter mais informações, consulte
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Caminhos
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+✨ Esta pathsseção define endpoints individuais (caminhos) na sua API e os métodos HTTP (operações) suportados por esses endpoints. 
+    Por exemplo, GET /userspode ser descrito como:
+
+paths:
+  /users:
+    get:
+      summary: Returns a list of users.
+      description: Optional extended description in CommonMark or HTML
+      responses:
+        "200":
+          description: A JSON array of user names
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Servidor de API e caminho base
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Todos os endpoints da API são relativos à URL base. Por exemplo, assumindo a URL base de https://api.example.com/v1, o /usersendpoint se refere a https://api.example.com/v1/users.
+
+https://api.example.com/v1/users?role=admin&status=active
+\________________________/\____/ \______________________/
+server URL       endpoint    query parameters
+path
+
+
+No OpenAPI 3.0, você usa o serversarray para especificar uma ou mais URLs base para sua API. serverssubstitui as palavras-chave host, basePathe schemesusadas no OpenAPI 2.0. Cada servidor tem um urle um . 
+opcional formatado em Markdown description.
+
+servers:
+  - url: https://api.example.com/v1    # The "url: " prefix is required
+
+Você também pode ter vários servidores, por exemplo, produção e sandbox:
+
+servers:
+  - url: https://api.example.com/v1
+    description: Production server (uses live data)
+  - url: https://sandbox-api.example.com:8443/v1
+    description: Sandbox server (uses test data)
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Formato de URL do servidor
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+O formato de URL do servidor segue o RFC 3986 e geralmente se parece com isto:
+
+scheme://host[:port][/path]
+
+O host pode ser um nome ou endereço IP (IPv4 ou IPv6). Os esquemas de WebSocket ws:// e wss:// do OpenAPI 2.0 também são suportados no OpenAPI 3.0. Exemplos de URLs de servidor válidas:
+
+https://api.example.com
+https://api.example.com:8443/v1/reports
+http://localhost:3025/v1
+http://10.0.81.36/v1
+ws://api.example.com/v1
+wss://api.example.com/v1
+/v1/reports
+/
+//api.example.com
+
+Se a URL do servidor for relativa, ela será resolvida em relação ao servidor onde o arquivo de definição OpenAPI fornecido está hospedado (mais sobre isso abaixo ). Observação: a URL do 
+servidor não deve incluir parâmetros de string de consulta. Por exemplo, isto é inválido:
+
+https://api.example.com/v1?route=
+
+Se a serversmatriz não for fornecida ou estiver vazia, o URL do servidor será definido por padrão como /:
+
+servers:
+  - url: /
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Modelos de Servidores
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Qualquer parte da URL do servidor – esquema, nome do host ou suas partes, porta, subcaminho – pode ser parametrizada usando variáveis. As variáveis são indicadas por {chaves} na URL do servidor, 
+  como a seguir:
+
+servers:
+  - url: https://{customerId}.saas-app.com:{port}/v2
+    variables:
+      customerId:
+        default: demo
+        description: Customer ID assigned by the service provider
+      port:
+        enum:
+          - '443'
+          - '8443'
+        default: '443'
+
+- Ao contrário dos parâmetros de caminho , as variáveis de servidor não usam um parâmetro schema
+
+- Em vez disso, presume-se que sejam strings. As variáveis podem ter valores arbitrários ou podem ser restritas a um parâmetro enum.
+
+- Em qualquer caso, um defaultvalor é necessário, que será usado se o cliente não o fornecer
+
+- A variável descriptioné opcional, mas útil e suporta Markdown ( CommonMark ) para formatação de texto enriquecido. 
+
+
+Casos de uso comuns para modelos de servidor:
+
+* Especificando vários protocolos (como HTTP vs HTTPS).
+* Aplicativos SaaS (hospedados) onde cada cliente tem seu próprio subdomínio.
+* Servidores regionais em diferentes regiões geográficas (exemplo: Amazon Web Services).
+* Definição de API única para APIs SaaS e locais.
+
+-----------------------------------------------------
+Exemplos HTTPS e HTTP
+-----------------------------------------------------
+
+servers:
+  - url: http://api.example.com
+  - url: https://api.example.com
+
+
+
+Ou usando modelos:
+
+servers:
+  - url: '{protocol}://api.example.com'
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: https
+
+Observação: esses dois exemplos são semanticamente diferentes. O segundo exemplo define explicitamente o servidor HTTPS como default, enquanto o primeiro exemplo não possui um servidor padrão.
+
+
+
+
+
+
+
+
+
 
 
 
