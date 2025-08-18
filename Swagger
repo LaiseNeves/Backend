@@ -241,13 +241,79 @@ servers:
 
 Observação: esses dois exemplos são semanticamente diferentes. O segundo exemplo define explicitamente o servidor HTTPS como default, enquanto o primeiro exemplo não possui um servidor padrão.
 
+*************************************
+Produção, Desenvolvimento e Encenação
+*************************************
+
+servers:
+  - url: https://{environment}.example.com/v2
+    variables:
+      environment:
+        default: api    # Production server
+        enum:
+          - api         # Production server
+          - api.dev     # Development server
+          - api.staging # Staging server
 
 
+*************************************
+SaaS e On-Premise
+*************************************
+
+servers:
+  - url: "{server}/v1"
+    variables:
+      server:
+        default: https://api.example.com # SaaS server
 
 
+*************************************
+Pontos finais regionais para diferentes áreas geográficas
+*************************************
+
+servers:
+  - url: https://{region}.api.cognitive.microsoft.com
+    variables:
+      region:
+        default: westus
+        enum:
+          - westus
+          - eastus2
+          - westcentralus
+          - westeurope
+          - southeastasia
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Substituindo Servidores
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+A matriz global serverspode ser substituída no nível do caminho ou da operação. Isso é útil se alguns endpoints usarem um servidor ou caminho base diferente do restante da API. 
+Exemplos comuns são:
+
+- URL base diferente para operações de upload e download de arquivos,
+- Pontos de extremidade obsoletos, mas ainda funcionais.
+
+servers:
+  - url: https://api.example.com/v1
+
+paths:
+  /files:
+    description: File upload and download operations
+    servers:
+      - url: https://files.example.com
+        description: Override base path for all operations with the /files path
+    ...
+
+/ping:
+    get:
+      servers:
+        - url: https://echo.example.com
+          description: Override base path for the GET /ping operation
 
 
-
+__________________________________________________________________________________________________________________________________________________________________________________________________
+URLs relativas
+__________________________________________________________________________________________________________________________________________________________________________________________________
 
 
 
