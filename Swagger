@@ -1,4 +1,78 @@
 __________________________________________________________________________________________________________________________________________________________________________________________________
+Video: 
+__________________________________________________________________________________________________________________________________________________________________________________________________
+
+Relembrando conceitos basicos de APIs REST:
+
+- O APP faz uma chamada direta da API enviando a ela o que chamamos de requisicao
+
+- Geralmente requisicoes sao enviadas a partir do protocolo HTTP ou HTTPS 
+
+- A requisidao tem espaco para apontar o metodo, a url, cabecalho e corpo 
+
+  - metodo tem a intencao do que deseja fazer, insercao de um recurso ou pesquisa busca de alguma info (sempre vai ter)
+
+  - url qual e o caminho do recurso que queremos acessar (sempre vai ter)
+
+  - cabecalho informacoes tecnicas como tolkien que e a autenticacao do usuario por ex  
+
+  - corpo que é geralmente utilizado quando temos alguns metodos de intencao de inseir ou alterar ou bucar algum tipo de info que e 
+    basicamente qual objeto que voce quer adicionar no determinado recurso (algumas requisicoes nao precisa do corpo) 
+
+- Essa estrutura é composta por dois itens que sempre vao ter que e o metodo que voce vai utilizar e qual url para onde voce vai mandar aquilo. E depois tem o 
+  cabecalho que voce pode ter que informar ou nao assim como o corpo depende do tipo de operacao (metodo com recurso/url) que voce estiver fazendo. 
+  A juncao do metodo e url definem o que é que voce esta querendo fazer com a sua API 
+
+- Uma vez que faz a requisicao a API processa uma resposta e na resposta temos algo similar a requisicao. A resposta nao tem um metodo pq ela é so uma resposta do servidor
+  para voce. 
+  Ela tbm nao tem a url pq ela simplesmente retorna a quem chamou. Ela tem cabecalho e tem tbm corpo porque no cabecalho vem alumas infos importantes do servidor e dentro do
+  corpo vem para voce as informacoes que voce requeriu do servidor. Se eu dizer para o servidor que quero fazer um GET de produtos ele vai trazer todos os produtos que tem
+  um elo, relacionado ao usuario que eu sou que mostrei no tolkien quem sou. 
+
+- Envio essa requisicao e obtenho uma resposta. 
+
+
+
+Swagger:
+
+- O swagger é uma aplicacao que permite fazer diversas coisas relacionadas a API. Tanto de documentacao quanto de desenho de APIs. Tem varias ferramentas voltadas para isso. 
+
+- Ele é escrito atraves da Yamel ou JSON 
+
+- swagger demonstra para voce o conteudo prposto por Yamel em interface similar a um site que e uma documentacao 
+
+- voce consegue ver quais operacoes que tem e o que da para fazer 
+
+- Se eu fizer uma requisicao apontando um recurso, se eu passar todas as infos necessarias da para add um pet na loja 
+
+- Para que possa interagir com a API e necessario que vc saiba quais sao as operacoes permitidas
+
+- Parametro path Um "parâmetro de caminho" representa uma parte variável de um caminho de URL, usado para identificar recursos específicos. Esses parâmetros são colocados entre 
+  chaves {} dentro da definição do caminho.
+
+- quem define as operacoes permitidas e os parametros path que vao existir ali é o engenheiro de software que esta pensando nessa API 
+
+- tem tbm o parametro querie = status apos ? 
+  São usados para filtrar ou customizar a resposta e aparecem depois da interrogação.
+
+- parametro body. As operacoes que exigem esse paramentro te dao ex de como é o body o corpo o JSON fica dentro da requisicao 
+  Quando a operação exige o body, significa que o cliente precisa enviar um JSON no corpo da requisição.
+  Essas operações geralmente são os métodos POST, PUT ou PATCH.
+
+- Tem duas formas de criar um Swagger
+  1. de forma manual (escreve linha a linha)
+  2. Gera um swaagger a partir do código. Voce tem que ir no codigo e ir mapeando e dizendo "esse aqui e um metodo que vai tornar operacao" "esse aqui é um parametro
+    que vai ter que ser enviado dentro da requisiao da API)". O swagger reconhecendo esse mapeamento vai gerar um arquivo Yamel para que fique mais facil para o swagger descrever 
+    a API em si  
+
+PUT com base da identificacao faz as alteracoes que voce requeriu 
+
+Outra informacao que o swaggrer mostra 
+
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________
+Documentacao SWAGGER:
 O que é Swagger?
 __________________________________________________________________________________________________________________________________________________________________________________________________
 
@@ -314,10 +388,6 @@ paths:
 __________________________________________________________________________________________________________________________________________________________________________________________________
 URLs relativas
 __________________________________________________________________________________________________________________________________________________________________________________________________
-
-
-
-
 
 
 
