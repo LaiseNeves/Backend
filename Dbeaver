@@ -1,2 +1,74 @@
- é uma ferramenta de banco de dados multiplataforma gratuita para desenvolvedores, administradores de banco de dados, analistas e todos que trabalham com dados. Ele suporta todos os bancos de dados 
-SQL populares, como MySQL, MariaDB, PostgreSQL, SQLite, Apache Family e muito mais.
+____________________________________________________________________________________________________________________________________________________________________
+DBeaver: Sobre
+____________________________________________________________________________________________________________________________________________________________________
+
+- É uma ferramenta de banco de dados universal multiplataforma gratuita para desenvolvedores, administradores de banco de dados, analistas e todos que trabalham com dados. 
+- Ele suporta todos os bancos de dados SQL populares, como MySQL, MariaDB, PostgreSQL, SQLite, Apache Family e muito mais.
+
+
+Caracteristicas: 
+
+- Usabilidade é o principal objetivo deste projeto, a interface do programa é cuidadosamente projetada e implementada.
+
+- É gratuito e de código aberto ( ASL ).
+
+- É multiplataforma
+
+- É baseado em uma estrutura de código aberto e permite a escrita de várias extensões (plugins).
+
+- Suporta qualquer banco de dados que tenha um driver JDBC.
+
+- Pode manipular qualquer fonte de dados externa que pode ou não ter um driver JDBC.
+
+- Há um conjunto de plugins para diferentes bancos de dados e diferentes utilitários de gerenciamento de banco de dados (por exemplo, ERD, transferência de dados, comparação, 
+  exportação/importação de dados, geração de dados simulados, etc.).
+
+- Tem um grande número de recursos .
+
+
+
+____________________________________________________________________________________________________________________________________________________________________
+DBeaver: Documentaçao 
+____________________________________________________________________________________________________________________________________________________________________
+
+- Com o DBeaver, você pode manipular seus dados como se estivesse trabalhando em uma planilha comum, criar relatórios analíticos a partir de registros em diversos 
+  armazenamentos de dados e exportar informações no formato desejado.
+
+- Para usuários avançados de banco de dados, o DBeaver oferece um poderoso editor SQL, amplos recursos de administração, ferramentas para migração de dados e esquemas, 
+  monitoramento de sessão de conexão com o banco de dados e muito mais.
+
+* O DBeaver está disponível em diferentes edições, cada uma adaptada a diferentes usuários e fluxos de trabalho.
+
+
+
+
+https://dbeaver.com/docs/dbeaver/
+https://dbeaver.com/docs/dbeaver/Getting-started/#first-steps
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Primeiros Passos:
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.Baixe o DBeaver.
+Baixe o DBeaver do site oficial. Escolha a versão apropriada para o seu sistema operacional.
+
+2.Instalar o DBeaver
+Siga as instruções para instalar o DBeaver no seu sistema operacional.
+
+3.Licença de importação
+Se você tiver uma versão PRO, saiba como importar sua licença para desbloquear todos os recursos do DBeaver.
+
+4.Visão geral da interface
+Familiarize-se com a interface do usuário do DBeaver para navegar pela ferramenta com eficiência.
+
+5.Operações básicas
+Siga as etapas básicas para seu primeiro uso do DBeaver.
+
+
+
+
+
+
+
+
+
