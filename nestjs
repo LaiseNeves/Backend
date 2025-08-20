@@ -1,5 +1,59 @@
+____________________________________________________________________________________________________________________________________________________________________
+Node ---> NestJS
+____________________________________________________________________________________________________________________________________________________________________
 
+- Antes o JavaScript só rodava dentro do navegador. O Node.js tornou possível executar JavaScript diretamente no computador/servidor, permitindo criar backends, APIs, 
+  scripts, ferramentas de linha de comando, etc.
+
+
+- Exemplo simples de um servidor HTTP em Node.js:
+
+// Importa o módulo http que já vem com o Node
+const http = require('http');
+
+// Cria o servidor
+const server = http.createServer((req, res) => {
+  // Define o status da resposta e o tipo de conteúdo
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+
+  // Envia uma mensagem como resposta ao navegador/cliente
+  res.end('Hello from Node.js!');
+});
+
+// Faz o servidor escutar na porta 3000
+server.listen(3000, () => {
+  console.log('Servidor rodando em http://localhost:3000');
+});
+
+
+
+- Como executar:
+  
+  1.Salva esse código em um arquivo chamado server.js
+
+  2. No terminal, vai até a pasta e executa: node server.js
+
+  3. Abre o navegador e acessa http://localhost:3000
+
+  ---> Você vai ver o texto “Hello from Node.js!”
+
+
+____________________________________________________________________________________________________________________________________________________________________
+
+____________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+____________________________________________________________________________________________________________________________________________________________________
 Introdução
+____________________________________________________________________________________________________________________________________________________________________
+
 Nest (NestJS) é um framework para a construção de aplicações Node.js eficientes e escaláveis do lado do servidor. Ele utiliza JavaScript progressivo, é desenvolvido com TypeScript e 
 oferece suporte total (mas ainda permite que os desenvolvedores codifiquem em JavaScript puro) e combina elementos de POO (Programação Orientada a Objetos), FP (Programação Funcional) e 
 FRP (Programação Reativa Funcional).
@@ -7,3 +61,30 @@ FRP (Programação Reativa Funcional).
 Por dentro, o Nest usa estruturas robustas de servidor HTTP como o Express (o padrão) e, opcionalmente, pode ser configurado para usar o Fastify também!
 
 https://docs.nestjs.com/ 
+
+____________________________________________________________________________________________________________________________________________________________________
+Diagrama: como os elementos do NestJS se relacionam
+____________________________________________________________________________________________________________________________________________________________________
+
+          +-----------------+
+          |     Module      |
+          +-----------------+
+                    |
+                    v
+          +-----------------+
+          |   Controller    |
+          +-----------------+
+                    |
+                    v
+          +-----------------+
+          |     Service     |
+          +-----------------+
+
+
+Resumo da relação:
+
+- O Module agrupa os componentes da funcionalidade.
+
+- O Controller recebe as requisições HTTP e chama o Service.
+
+- O Service contém a lógica e regras de negócio.
