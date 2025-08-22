@@ -124,12 +124,30 @@ Vantagens do MinIO
 Embora exija uma infraestrutura bem planejada e envolva uma curva de aprendizado, o conjunto de vantagens faz do MinIO uma solução confiável e eficiente para armazenamento 
 de objetos.
 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+minio cli commands
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+O MinIO Client (mc) fornece uma interface de linha de comando para interagir com implantações do MinIO e outros serviços compatíveis com S3. 
+Ele oferece uma ampla variedade de comandos para gerenciar buckets, objetos, usuários e políticas.
+
+- Operações Básicas:
+---> mc alias set: Define um alias para um servidor MinIO ou serviço compatível com S3.
+
+      mc alias set myminio http://localhost:9000 accesskey secretkey
+
+
+
+
+
+
+
+
+
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Como criar um ambiente Com MinIO na nuvem
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Vídeos
