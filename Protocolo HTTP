@@ -1,0 +1,62 @@
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+HTTP: Verbos
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- A ideia [...] é [...]: seu serviço vai prover uma url base e os verbos HTTP vão indicar qual ação está sendo requisitada pelo consumidor do serviço.
+
+---> A ideia dos verbos HTTP é indicar a operação que queremos executar sobre um recurso: 
+    seu serviço vai prover uma URL base e os verbos HTTP vão indicar qual ação está sendo requisitada pelo consumidor do serviço.
+
+- Verbos: 
+          Verbo GET → Ler
+          Verbo POST → Criar
+          Verbo DELETE → Substituir
+          Verbo PUT → Alterar parcialmente
+          Verbo PATCH → Remover
+
+
+1️⃣ Verbo GET: se enviarmos para ela uma requisição HTTP utilizando o verbo GET, o servidor irá retornar dados. 
+    Normalmente, obteremos como resultado uma listagem de registros (notas, usuários, produtos etc.) ou os detalhes de um único registro, se a URL apontar para um recurso específico.
+
+2️⃣ Verbo POST: se utilizarmos o verbo POST, provavelmente estaremos tentando adicionar um novo registro, cujos dados serão enviados no corpo da requisição.
+
+3️⃣ Verbo DELETE: indica que desejamos remover um registro existente, identificado pela URL.
+
+4️⃣ Verbo PUT: utilizado quando queremos substituir completamente um registro existente. Ele espera que sejam enviados todos os dados do recurso, mesmo que apenas um campo seja alterado.
+
+5️⃣ Verbo PATCH: parecido com o PUT, mas usado quando queremos atualizar parcialmente um registro, ou seja, modificar apenas alguns campos, sem precisar enviar o objeto inteiro.
+
+
+---> a URL www.dominio.com/rest/notas/1, por exemplo, poderia ser usada para diferentes finalidades, dependendo do verbo enviado na requisição.
+---> Repare que a URL se mantém – o verbo indica o que estamos fazendo de fato. Por exemplo, não precisamos disponibilizar no serviço uma URL como /notas/listar ou /notas/remover/1.
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+HTTP: Verbos tabela 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+  
+| **Verbo**  | **O que faz**                                                                  | **Exemplo de uso**                                                               | **Resposta esperada**                     |
+| ---------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- | ----------------------------------------- |
+| **GET**    | Busca informações de um recurso (listagem ou detalhe).                         | `GET /notas` → retorna todas as notas<br>`GET /notas/1` → retorna a nota de ID 1 | Lista ou objeto em formato JSON.          |
+| **POST**   | Cria um novo recurso, enviando os dados no corpo da requisição.                | `POST /notas` com `{ "titulo": "Prova", "valor": 8 }`                            | Registro criado e retornado com ID.       |
+| **DELETE** | Remove um recurso existente.                                                   | `DELETE /notas/1`                                                                | Confirmação de exclusão (status 200/204). |
+| **PUT**    | Substitui completamente um recurso existente (envia todos os dados novamente). | `PUT /notas/1` com `{ "titulo": "Trabalho", "valor": 10 }`                       | Registro atualizado por inteiro.          |
+| **PATCH**  | Atualiza parcialmente um recurso (apenas alguns campos).                       | `PATCH /notas/1` com `{ "valor": 9 }`                                            | Apenas o campo informado é alterado.      |
+
+️
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+Exemplo pratico:
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+(...) uma vez que REST é um padrão e independe de linguagem.
+
+
+
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+🌐 Sites: 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+https://www.devmedia.com.br/http-verbos/41224
+https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Reference/Status 
