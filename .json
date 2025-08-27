@@ -1,0 +1,109 @@
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Trabalhando com JSON
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- JavaScript Object Notation (JSON) 
+
+- é um formato baseado em texto padrão para representar dados estruturados com base na sintaxe do objeto JavaScript.
+
+-  É comumente usado para transmitir dados em aplicativos da Web (por exemplo, enviar alguns dados do servidor para o cliente, para que possam ser exibidos em uma página da Web ou vice-versa).
+
+- Mesmo que se assemelhe à sintaxe literal do objeto JavaScript, ele pode ser usado independentemente do JavaScript, e muitos ambientes de programação possuem a capacidade de ler (analisar) e gerar JSON.
+
+- O JSON existe como uma string — útil quando você deseja transmitir dados por uma rede. Ele precisa ser convertido em um objeto JavaScript nativo quando você quiser acessar os dados.
+
+**Nota: Converter uma string em um objeto nativo é chamado de análise, enquanto a conversão de um objeto nativo em uma string para que possa ser transmitida pela rede é chamada de stringification.
+
+- Um objeto JSON pode ser armazenado em seu próprio arquivo, que é basicamente apenas um arquivo de texto com uma extensão de .json, e um MIME type de application/json.
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Estrutura JSON
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- um JSON é uma string cujo formato se parece muito com o formato literal do objeto JavaScript. 
+
+- pode incluir os mesmos tipos de dados básicos dentro do JSON, como em um objeto JavaScript padrão — strings, números, matrizes, booleanos e outros literais de objeto. 
+  Isso permite que você construa uma hierarquia de dados, assim:
+
+JSON
+{
+  "squadName": "Super hero squad",
+  "homeTown": "Metro City",
+  "formed": 2016,
+  "secretBase": "Super tower",
+  "active": true,
+  "members": [
+    {
+      "name": "Molecule Man",
+      "age": 29,
+      "secretIdentity": "Dan Jukes",
+      "powers": ["Radiation resistance", "Turning tiny", "Radiation blast"]
+    },
+    {
+      "name": "Madame Uppercut",
+      "age": 39,
+      "secretIdentity": "Jane Wilson",
+      "powers": [
+        "Million tonne punch",
+        "Damage resistance",
+        "Superhuman reflexes"
+      ]
+    },
+    {
+      "name": "Eternal Flame",
+      "age": 1000000,
+      "secretIdentity": "Unknown",
+      "powers": [
+        "Immortality",
+        "Heat Immunity",
+        "Inferno",
+        "Teleportation",
+        "Interdimensional travel"
+      ]
+    }
+  ]
+}
+
+
+- Se nós carregássemos esse objeto em um programa JavaScript, analisado em uma variável chamada superHeroes por exemplo, poderíamos então acessar os dados dentro dele usando a mesma notação dot / bracket
+
+superHeroes.homeTown;
+superHeroes["active"];
+
+- Para acessar os dados mais abaixo na hierarquia, basta encadear os nomes de propriedades e os índices de array necessários juntos.
+
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Outras Notas:
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- O JSON é puramente um formato de dados — contém apenas propriedades, sem métodos.
+
+- JSON requer aspas duplas para serem usadas em torno de strings e nomes de propriedades. Aspas simples não são válidas.
+
+- Mesmo uma única vírgula ou cólon perdidos podem fazer com que um arquivo JSON dê errado e não funcione. Você deve ter o cuidado de validar quaisquer dados que você esteja tentando usar (embora o JSON gerado 
+  por computador seja menos provável de incluir erros, desde que o programa gerador esteja funcionando corretamente). Você pode validar o JSON usando um aplicativo como o JSONLint
+
+- O JSON pode realmente assumir a forma de qualquer tipo de dados que seja válido para inclusão dentro do JSON, não apenas matrizes ou objetos. Por exemplo, uma única string ou número seria um objeto JSON válido.
+
+- Ao contrário do código JavaScript no qual as propriedades do objeto podem estar sem aspas, em JSON, somente strings entre aspas podem ser usadas como propriedades. 
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sites Importantes: 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+https://jsonlint.com/ ---> validar o JSON usando um aplicativo 
+
+
+https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Scripting/JSON 
+
+
+
+
+
+
+
+
+
