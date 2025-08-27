@@ -1,0 +1,24 @@
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+GeoJSON:  Gravação de dados geométricos para visualização em mapas 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- é um formato de intercâmbio de dados geoespaciais padrão aberto que representa feições geográficas simples e seu atributos não espaciais.
+
+- Baseado em JavaScript Object Notation (JSON), GeoJSON é um formato para codificar uma variedade de estruturas de dados geográficas.
+
+- Utiliza um sistema de referência de coordenadas geográfica, Sistema Geodésico Mundial 1984 e unidades de graus decimais.
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+Tipos de feições suportadas
+______________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+O GeoJSON suporta os seguintes tipos de feições:
+
+- Ponto (incluindo endereços e localizações)
+- String de linha (incluindo ruas, estradas e limites) <---- 
+- Polígono (incluindo países, províncias e áreas de solo)
+- coleções de partes múltiplas de ponto, string e linha ou feições de polígono
+
+** As feições de GeoJSON não são somente utilizadas para representar entidades do mundo físico. Por exemplo, rota móvel e aplicativos de navegação podem descrever sua cobertura de serviço utilizando GeoJSON.
+
