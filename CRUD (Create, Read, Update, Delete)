@@ -29,7 +29,8 @@ ________________________________________________________________________________
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Funções do CRUD: Create (Criar)
+Funções do CRUD: 
+Create (Criar)
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * Esta etapa envolve a criação de novos dados em um sistema. 
@@ -37,6 +38,116 @@ Funções do CRUD: Create (Criar)
 - Por exemplo, quando um usuário se registra em um site, um novo registro é criado em um banco de dados.
 
 - 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Read (Ler)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* A função “Read” é o que permite aos sistemas acessar e exibir dados
+
+- é usada cada vez que solicitamos informações,
+
+* Essencialmente, essa função garante que os dados armazenados possam ser recuperados e visualizados quando necessário.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Update (Atualizar)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* “Update” refere-se à atualização de dados existentes.
+
+- Esta função é crucial para manter a relevância e a precisão das informações em um banco de dados
+
+-  Um exemplo clássico seria a atualização de um perfil de usuário em uma rede social, onde as informações pessoais são modificadas.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Delete (Apagar)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Esta função é usada para remover dados de um sistema. 
+
+- Ela deve ser manuseada com cuidado, pois uma vez que os dados são apagados, podem não ser recuperáveis.
+
+-  Um exemplo seria a exclusão de uma conta de usuário, que remove permanentemente os dados do usuário do sistema.
+
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+CRUD em SQL
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Para entender o CRUD no contexto do SQL, é vital conhecer como as operações são implementadas nesta linguagem.
+
+No SQL, a função Create é realizada através do comando “INSERT INTO”, que adiciona novos registros a uma tabela. 
+Read é feito usando “SELECT”, que recupera dados. 
+“UPDATE” é usado para modificar registros existentes, e 
+“DELETE” remove registros de uma tabela. Esses comandos são a base para interagir com dados em qualquer banco de dados SQL.
+
+
+  Create ---> “INSERT INTO”
+  Read ---> “SELECT”
+  Update ---> “UPDATE”
+  Delete ---> “DELETE” 
+
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+CRUD em Python
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Em Python, o CRUD é aplicado frequentemente em combinação com bibliotecas como SQLAlchemy ou o módulo sqlite3 para interagir com bancos de dados.
+
+- Por exemplo, para criar dados, você pode usar métodos para inserir objetos em uma tabela. 
+
+- A leitura de dados é feita por meio de consultas, enquanto a atualização e a exclusão de dados são realizadas por meio de comandos específicos que modificam ou removem os objetos correspondentes.
+
+
+..................................................................................................................................................................................................................
+Vantagens e desvantagens do CRUD
+..................................................................................................................................................................................................................
+
+As vantagens do uso do CRUD em desenvolvimento de software incluem a padronização das operações de banco de dados, facilitando a manutenção e o entendimento do código. 
+Além disso, ele ajuda na criação de interfaces de usuário intuitivas para manipulação de dados.
+
+Por outro lado, uma desvantagem pode ser a complexidade adicional em sistemas com grandes volumes de dados ou requisitos especiais de desempenho, onde operações CRUD padrão podem não ser suficientes.
+
+
+
+..................................................................................................................................................................................................................
+CRUD no contexto de usuários
+..................................................................................................................................................................................................................
+
+No gerenciamento de usuários, o CRUD é essencial. 
+
+Quando um novo usuário se registra em um site (Create), suas informações são armazenadas. 
+Esses dados podem ser acessados e revisados (Read), como verificar perfis de usuário. 
+Se um usuário atualiza seu perfil ou senha, isso é um Update. 
+
+Por fim, a exclusão de uma conta de usuário representa o Delete. Essas operações garantem a gestão eficiente e segura de dados do usuário em qualquer sistema.
+
+
+..................................................................................................................................................................................................................
+A importância do CRUD na programação
+..................................................................................................................................................................................................................
+
+- (...) Um pilar do desenvolvimento de software.
+
+-  Esse conceito é a base para a interação eficiente com dados em uma ampla gama de aplicações, desde websites até complexos sistemas de gerenciamento de informações. 
+
+- O domínio desse conceito capacita desenvolvedores a criar sistemas robustos e flexíveis e garante a integridade e a segurança dos dados manipulados.
+
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Referencias Bibliográficas
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+https://querobolsa.com.br/revista/crud-o-que-e
+
+
+
+
+
+
+
 
 
 
