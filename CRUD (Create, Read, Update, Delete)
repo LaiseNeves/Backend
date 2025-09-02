@@ -1,0 +1,46 @@
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Crud: o que é e como funciona na programação
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- o termo “CRUD” (...) sua presença é fundamental em quase todos os sistemas que gerenciam dados. 
+
+- Esse termo é um acrônimo, no qual C é de Create (Criar), R é de Read (Ler), U é de Update (Atualizar) e D é de Delete (Apagar). 
+
+  Create 
+  Read
+  Update
+  Delete
+
+- O CRUD é parte fundamental da manipulação de dados em inúmeros sistemas de banco de dados ao redor do mundo. 
+
+- Em sua essência, CRUD encapsula as operações básicas que um sistema executa para permitir que usuários interajam com informações em um banco de dados. 
+
+- CRUD é um acrônimo para as operações fundamentais em qualquer sistema que interage com um banco de dados
+
+- Essas quatro ações formam o cerne da maioria dos softwares de banco de dados, permitindo aos usuários criar registros novos, ler ou recuperar dados existentes, atualizar informações previamente armazenadas e, 
+  finalmente, excluir registros quando necessário.
+
+- Historicamente, o conceito de CRUD surgiu com os primeiros sistemas de gerenciamento de banco de dados.
+
+- À medida que esses sistemas evoluíam, a necessidade de operações padrão para interagir com dados tornou-se tornou evidente.
+
+-  O CRUD, portanto, representa essas operações essenciais, servindo como um framework básico para a interação de dados em inúmeras aplicações.
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Funções do CRUD: Create (Criar)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Esta etapa envolve a criação de novos dados em um sistema. 
+
+- Por exemplo, quando um usuário se registra em um site, um novo registro é criado em um banco de dados.
+
+- 
+
+
+
+
+
+
+
