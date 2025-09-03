@@ -1,2 +1,46 @@
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Signed URL
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-É uma assinatura para proteger a requisicao 
+---> É uma assinatura para proteger a requisicao 
+
+Ao criar um URL pré-assinado, você deve fornecer suas credenciais de segurança e especificar o seguinte:
+
+- Um bucket do Amazon S3
+
+- Uma chave de objeto (se o download desse objeto for no bucket do Amazon S3, se estiver carregando, esse é o nome do arquivo a ser carregado)
+
+- Um método HTTP (GET para baixar objetos, PUT fazer upload, HEAD para ler metadados de objetos etc.)
+
+- Um intervalo de tempo de validade
+
+
+----------------------------------------------
+Limitar recursos de pre-signed URLs
+----------------------------------------------
+
+Os recursos de um URL pré-assinado são limitados pelas permissões do usuário que o criou. 
+Em essência, os URLs pré-assinados são tokens ao portador que concedem acesso ao portador. Dessa forma, recomendamos que você os proteja adequadamente
+
+{
+   "Version": "2012-10-17",
+   "Statement": [
+      {
+         "Sid": "Deny a presigned URL request if the signature is more than 10 min old",
+         "Effect": "Deny",
+         "Principal": {"AWS":"*"},
+         "Action": "s3:*",
+         "Resource": "arn:aws:s3:::amzn-s3-demo-bucket/*",
+         "Condition": {
+            "NumericGreaterThan": {
+               "s3:signatureAge": 600000
+            }
+         }
+      }
+   ]
+}
+
+
+
+
+https://docs.aws.amazon.com/pt_br/AmazonS3/latest/userguide/using-presigned-url.html
