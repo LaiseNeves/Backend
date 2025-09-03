@@ -1,0 +1,20 @@
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Layered
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+---> Organização do sistema em diferentes camadas
+
+A arquitetura em camadas é um estilo arquitetural muito comum em aplicações de software, especialmente em sistemas corporativos e aplicações web.
+
+Ela organiza o sistema em camadas lógicas, onde cada uma tem responsabilidades bem definidas. Essas camadas podem ser distribuídas de diferentes formas em camadas físicas (servidores, processos, containers etc.).
+
+Camadas Lógicas Típicas
+Apresentação (UI/Web/API): Responsável por interações com o usuário ou com outras aplicações.
+Aplicação / Serviço: Orquestra a lógica entre apresentação e domínio.
+Domínio / Negócio: Contém regras de negócio puras, entidades, serviços de domínio etc.
+Infraestrutura / Acesso a dados: Comunicação com banco de dados, serviços externos, armazenamento etc.
+
+
+
+
+https://medium.com/@deutnerg/arquitetura-backend-a-arquitetura-em-camadas-01368fc13797
