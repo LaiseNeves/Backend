@@ -4,12 +4,64 @@ ________________________________________________________________________________
 
 - Para desenvolver aplicativos e serviços úteis e sustentáveis, as APIs têm sido meios e facilitadores poderosos.
 
+- As APIs facilitam a transmissão de dados entre vários artefatos de software para resolver os problemas dos clientes. 
 
-
+-  Quase todos os produtos modernos baseados na web oferecem suas próprias APIs para interagir e integrar seus serviços diretamente em qualquer projeto.
 
 
 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
-!! Qual é a diferença entre uma API e um Endpoint?
+Entendendo os endpoints de API
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- “API” é a abreviação de “Application Programming Interface.” 
+
+- É essencialmente um conjunto de regras que permitem que um aplicativo compartilhe seus dados com outros aplicativos. 
+
+---> Um endpoint de API é uma localização digital exposta pela API a partir da API que recebe e responde as consultas. 
+
+---> Cada endpoint é uma URL (Uniform Resource Locator) que fornece a localização de um recurso no servidor da API.
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Como funcionam as APIs
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Para que dois aplicativos de software se comuniquem pela internet:
+
+- um aplicativo (indicado como cliente) envia uma solicitação para os endpoints de API do outro aplicativo (indicado como servidor)
+
+
+                                                                      app cliente ----solicitacao---> endpoints API servidor (outro aplicativo)
+
+
+- Dependendo das habilidades de API, o cliente pode solicitar um recurso de um banco de dados ou pedir ao servidor para executar alguma ação em seu ambiente e retornar os resultados.
+
+- Ao receber o resultado do cliente, a API (ou o servidor) executa a operação solicitada e envia o resultado da operação de volta para o cliente na forma de uma resposta.
+
+                                                                      API ou servidor <---resultado--- cliente <---------------.
+                                                                            .                                                  .
+                                                                            .                                                  .
+                                                                         executa a                                             .
+                                                                            .                                                  .
+                                                                            .                                                  .
+                                                                            v                                                  .
+                                                                      operacao solicitada                                      .
+                                                                            .                                                  .
+                                                                            .                                                  .
+                                                                          envia o                                              .
+                                                                            .                                                  .
+                                                                            .                                                  .
+                                                                            v                                                  .
+                                                                      resultado da operação = resposta ------- para o ---------.
+
+
+- Esta resposta também pode incluir quaisquer recursos que o cliente tenha solicitado.
+
+- Pode haver vários tipos de APIs, incluindo REST, SOAP, e GraphQL. Todas elas funcionam de uma forma diferente, mas seu propósito ainda é o mesmo: facilitar a comunicação entre entidades baseadas na web. 
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+📌 Qual é a diferença entre uma API e um Endpoint?
 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 ---> Uma API é um conjunto de protocolos e ferramentas para facilitar a interação entre dois aplicativos. Um endpoint é um lugar na API onde a troca acontece. 
@@ -17,3 +69,180 @@ ________________________________________________________________________________
 ---> Endpoints são URIs (Uniform Resource Identifiers) em uma API que um aplicativo pode acessar.
 
 ---> Todas as APIs têm endpoints. Sem um endpoint, seria impossível interagir com uma API.
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+📌 Qual é a diferença entre uma API e um Endpoint?
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Para expandir o seu entendimento de APIs e endpoints, vamos utilizar um pequeno exemplo. (...) Considere o Cat Facts API. (...)  Existem três endpoints disponíveis: 
+
+/fact: Retorna um cat fact único e aleatório.
+/facts: Devolve uma lista de cat facts aleatórios.
+/breeds: Devolve uma lista de cat breeds.
+
+Para fazer um pedido a esta API e retornar um cat fact, você precisa anexar o endpoint correto (que é /fact):
+
+                 à URL base da API (que é https://catfact.ninja/). 
+Isso lhe dará a seguinte URL de endpoint: https://catfact.ninja/fact
+
+Se você enviar uma solicitação GET para a URL acima, você receberá um resultado similar:
+
+{
+    "fact": "Spanish-Jewish folklore recounts that Adamu2019s first wife, Lilith, became a black vampire cat, sucking the blood from sleeping babies. This may be the root of the superstition that a cat will smother a sleeping baby or suck out the childu2019s breath.",
+    "length": 245
+}
+
+Você não teria conseguido obter esses dados caso tivesse acessado outro endpoint, como /breeds. É dessa forma que os endpoints ajudam a interagir e organizar os recursos fornecidos por uma API 
+
+---> cada endpoint é específico para uma porção particular dos dados.
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+📌 Por que os Endpoints de API são importantes?
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- A transferência de dados e o compartilhamento de recursos são alguns dos fundamentos essenciais da internet (...)
+
+- Sem APIs, nada disso seria possível. As APIs fornecem um poderoso meio de comunicação e interação entre aplicativos baseados na web.
+
+---> Os endpoints de API, por sua vez, ajudam a determinar a localização exata dos recursos na API. 
+---> ajudam os desenvolvedores de API a organizar os recursos disponíveis e controlar o acesso do consumidor também.
+---> desempenho e a produtividade dos aplicativos que consomem APIs dependem diretamente do design e desempenho dos endpoints de API.
+
+(...)
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Localizando um Endpoint de API
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Localizar um endpoint de API é um trabalho simples se você tiver acesso à documentação da API. 
+
+  Às vezes, a documentação pode listar os endpoints simplesmente com descrições curtas ao lado de cada um.
+
+- Em outros casos (como o Swagger), a documentação pode ser mais complexa e poderosa, e você pode ser capaz de testar os endpoints diretamente da página de documentação.
+
+* dedicar tempo para entender o propósito de cada endpoint antes de começar a usá-lo.
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Versão do Endpoint de API
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+- Assim como outros artefatos de software, as APIs também têm versões. O versionamento ajuda a observar e analisar a API conforme ela cresce durante o processo de desenvolvimento. 
+
+- Aqui estão algumas maneiras comuns pelas quais os endpoints da API são versionados.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Caminho do URI
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Uma das maneiras mais populares de se obter uma versão dos endpoints de API é incluir um número de versão no caminho do URI. Por exemplo:
+
+            http://example.com/api/1/resourcename
+
+- Você pode ver esta abordagem como uma forma de versionar globalmente os endpoints de API. Caso você use um subdomínio para à sua API, como, por exemplo:
+
+            http://api.example.com/resourcename
+
+- você também pode colocar um indicador de versão em seu subdomínio, como este:
+
+            http://api-v2.example.com/resourcename
+
+- Como você pode ver, esta abordagem modifica a caminho URI da API, de modo que cada versão se comporta como um recurso independente. 
+
+- Isso significa que você pode acessar simultaneamente as duas versões da API conforme necessário e até mesmo armazená-las em cache independentemente para acesso mais rápido.
+
+- Ao incluir um número de versão no caminho da URI (e não no subdomínio), aqui está um formato interessante que você pode seguir para incluir mais informações:
+
+            MAJOR.MINOR.PATCH
+
+- Por exemplo, é assim que a API interna do nosso exemplo acima seria versionada:
+
+            http://example.com/api/1.2.3/resourcename
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Parâmetros de consulta
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+- Outra alternativa para fazer a versão de uma REST API é colocar o número da versão nos parâmetros de consulta da URL.
+
+-  Essa abordagem permite que o ambiente do servidor acesse o número da versão necessário como qualquer outro parâmetro de consulta e o use para redirecionar o fluxo de controle no aplicativo.
+
+- A URL do exemplo anterior, quando versionada usando parâmetros de consulta, ficaria assim:
+
+          http://example.com/api/resourcename?version=1
+
+- Benefícios: Muito fácil de implementar em código.
+              Você pode rapidamente definir a versão mais recente.
+
+- Limitações: O uso de parâmetros pode ser mais desafiador para rotear solicitações para a versão correta do que a versão do caminho do URI.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cabeçalhos personalizados
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Você também pode fazer a versão REST APIs, fornecendo cabeçalhos personalizados com o número da versão como um atributo. 
+
+A diferença mais significativa entre este método e os dois mencionados anteriormente é que este não desorganiza a URL do endpoint com informações da versão
+
+            curl -H "Accepts-version: 2.0"
+
+            http://example.com/api/resourcename
+
+
+(...)
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Exemplo de um endpoint do API
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Para entender melhor APIs e endpoints, ilustremos um exemplo usando a API do Twitter (...) Ela oferece vários endpoints para realizar várias operações em seus dados.
+
+Por exemplo, você pode usar o tweet lookup endpoint (https://api.twitter.com/2/tweets/{id}) ara recuperar o conteúdo de um tweet específico usando seu identificador exclusivo. 
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+Exemplo de um endpoint do API
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Sem medidas de segurança adequadas, os endpoints da API podem violar seriamente as defesas do seu aplicativo e levar ao comprometimento de dados e recursos.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Hashing de senha unidirecional
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Ao construir recursos web, você muitas vezes encontrará senhas como uma forma de autenticar entidades. 
+Enquanto as senhas ajudam a proteger os dados dos aplicativos de seus usuários, você precisa proteger o armazenamento das senhas também para torná-las um meio de autenticação verdadeiramente eficaz.
+
+(...)
+
+Uma maneira de parar isso é codificá-las antes de armazená-las. Existem dois métodos de criptografia: simétrica e assimétrica.
+
+Na criptografia simétrica, você pode usar a mesma chave de criptografia para bloquear e desbloquear o conteúdo. 
+No entanto, isso não é aconselhável para senhas, uma vez que hackers persistentes e sofisticados podem facilmente quebrá-las.
+
+* A maneira recomendada de armazenar senhas é usando criptografia unidirecional ou “assimétrica”. 
+  Ao invés de empregar uma única chave de criptografia, uma função matemática é usada para codificar os dados.
+
+A versão codificada é armazenada no banco de dados para que ninguém, incluindo seus administradores do servidor, possa decifrar as senhas e visualizá-las. 
+Para autenticar usuários, a senha digitada é executada através da mesma função matemática, e os resultados são comparados para verificar se a senha digitada estava correta.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+HTTPS
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+(...)
+
+você deve fazer questão de sempre escolher HTTPS sempre que disponível.
+
+Se seus aplicativos estão atualmente usando o protocolo HTTP, você deve considerar fortemente a migração para HTTPS. Não importa quão insignificante seja a conexão; ela sempre pode levar a um vazamento.
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Referencias Bibliográficas: 
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+https://kinsta.com/pt/base-de-conhecimento/endpoint-api/#:~:text=Uma%20API%20%C3%A9%20um%20conjunto,API%20onde%20a%20troca%20acontece
