@@ -1,0 +1,81 @@
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
+EXIF (Exchangeable Image File Format) 
+________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+---> Padrão de metadados utilizado para imagens.
+
+- Um arquivo EXIF é uma forma de armazenamento de dados que fornece informações específicas sobre fotografias, como as configurações da câmera, hora e data, e local onde uma foto foi tirada.
+
+- Os arquivos EXIF (Exchangeable Image File Format, formato de arquivo de imagem intercambiável)
+
+- Um arquivo EXIF contém todas as informações sobre a imagem, como o nível de exposição, onde você tirou a foto e as configurações usadas.
+
+- Isso facilita a filtrar as fotos no seu dispositivo de armazenamento por características particulares da imagem.
+
+--------------------------------------------------------------------
+História do arquivo EXIF.
+--------------------------------------------------------------------
+O EXIF foi lançado pela primeira vez em 1995. 
+Criado pela Japan Electronic Industries Development Association (JEIDA), esse formato de arquivo armazenava inicialmente metadados básicos (ou seja, dados sobre outros dados – nesse caso, dados de imagem), como informações 
+de data e hora, além de uma pequena miniatura para visualizar a imagem em uma estrutura de pastas.
+
+Durante a década seguinte, mais versões foram lançadas com características de dados adicionais. Quase 30 anos depois, os EXIFs de hoje contêm uma gama de metadados de imagem ou vídeo, incluindo dados de foto e áudio.
+
+--------------------------------------------------------------------
+Como usar um arquivo EXIF.
+--------------------------------------------------------------------
+Quer você seja um profissional ou um amador, os EXIFs são ótimas ferramentas de documentação (...) São úteis em vários cenários, inclusive:
+
+1. Armazenamento de biblioteca.
+2. Recriação de estilos.
+
+
+1. Armazenamento de biblioteca.
+O formato de arquivo EXIF facilita o armazenamento e a recuperação das fotos. Os EXIFs armazenam metadados, ou seja, dados sobre os dados de imagem das fotos para serem agrupadas com base em determinados critérios, 
+como localização de GPS ou data e hora, ou mesmo configurações específicas da câmera.
+
+
+2. Recriação de estilos.
+Se você vir e gostar de uma determinada foto enquanto navega na Web ou visualiza os portfólios digitais (...) você poderá solicitar ou acessar os dados EXIF dessa imagem. 
+Dessa forma, você poderia descobrir as configurações originais da foto para tentar recriar o estilo.
+
+--------------------------------------------------------------------
+Prós e contras dos arquivos EXIF.
+--------------------------------------------------------------------
+Vantagens dos arquivos EXIF.
+- Armazenar e recuperar informações sobre fotos na sua biblioteca de imagens digitais é fácil com os EXIFs.
+- (...)
+- Eles facilitam a recriação de efeitos com base em fotos que você tirou, permitindo um registro das configurações usadas.
+
+
+Desvantagens dos arquivos EXIF.
+- Os EXIFs armazenam dados de localização GPS, o que pode gerar preocupações quanto ao modo como seus dados pessoais são utilizados.
+- Os dados EXIF armazenados nas imagens ocupam espaço em um site. Isso pode diminuir a velocidade dele, impactando negativamente a experiência do usuário.
+
+--------------------------------------------------------------------
+Como abrir um arquivo EXIF.
+--------------------------------------------------------------------
+Quase todos os principais sistemas operacionais podem abrir um arquivo EXIF. 
+Para abrir no Windows e visualizar os dados, clique com o botão direito do mouse sobre o arquivo de imagem EXIF. Vá até Propriedades e depois clique em Detalhes.
+
+--------------------------------------------------------------------
+Como criar e editar um arquivo EXIF.
+--------------------------------------------------------------------
+Os EXIFs são criados automaticamente pela sua câmera digital quando você tira fotografias. A informação é salva dentro das propriedades da sua foto.
+
+Para editar um EXIF ou ocultar as informações que você não quer que outros acessem, você precisará de uma ferramenta que permita editar e remover metadados de imagem. 
+Há várias ferramentas online gratuitas e pagas que podem ajudá-lo com isso.
+
+É fácil editar metadados de imagem. Basta abrir a imagem no Adobe Bridge. Em seguida, selecione Editar > Preferências antes de escolher a caixa suspensa de metadados.
+
+Depois, você poderá editar e remover suas opções de metadados.
+
+--------------------------------------------------------------------
+Referencias Bibliográficas
+--------------------------------------------------------------------
+https://www.adobe.com/br/creativecloud/file-types/image/raster/exif-file.html
+
+
+
+
+
