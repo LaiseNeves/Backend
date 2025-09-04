@@ -1,0 +1,72 @@
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+DTO (Data Transfer Object) 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+---> Transportar dados entre camadas sem expor entidades interna
+
+---> é um dos padrões mais comuns no desenvolvimento de aplicações modernas.
+
+🔹 Ele ajuda a separar a camada de domínio da de apresentação, trazendo mais segurança, clareza e organização no tráfego de dados.
+🔹 Em arquiteturas RESTful, é essencial para evitar expor diretamente as entidades do sistema.
+🔹 Além disso, torna a manutenção mais simples e pode até melhorar a performance.
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+O que é um Objeto de Transferência de Dados (DTO)?
+Respostas: 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+***Um Objeto de Transferência de Dados é um objeto usado para encapsular dados e enviá-los de um subsistema de um aplicativo para outro.
+
+DTOs são mais comumente usados ​​pela camada de Serviços (...) para transferir dados entre ela e a camada de UI. (...) também são ótimos modelos no padrão MVC.
+
+Outro uso para DTOs pode ser encapsular parâmetros para chamadas de métodos. Isso pode ser útil se um método receber mais de quatro ou cinco parâmetros.
+
+Ao usar o padrão DTO, você também usaria montadores DTO. Os montadores são usados ​​para criar DTOs a partir de Objetos de Domínio e vice-versa.
+
+
+---> Alguns frameworks ORM têm a capacidade de projeção por meio do uso de interfaces ou classes adicionais. Assim, os repositórios podem retornar objetos View diretamente. 
+Portanto, você não precisa de uma transformação adicional.
+
+Por exemplo, esta é a nossa entidade Usuário:
+
+@Entity
+public final class User {
+    private String id;
+    private String firstname;
+    private String lastname;
+    private String phone;
+    private String fax;
+    private String address;
+    // Accessors ...
+}
+Mas você deve retornar uma lista paginada de usuários que inclua apenas ID, nome e sobrenome. Depois, você pode criar um Objeto de Valor de Visualização para projeção ORM.
+
+public final class UserListItemView {
+    private String id;
+    private String firstname;
+    private String lastname;
+    // Accessors ...
+}
+Você pode obter facilmente o resultado paginado da camada de repositório. Graças ao Spring, você também pode usar apenas interfaces para projeções.
+
+List<UserListItemView> find(Pageable pageable);
+
+
+✨ Para mim, a melhor resposta para a pergunta sobre o que é um DTO é que os DTOs são objetos simples que não devem conter nenhuma lógica de negócios ou implementação de métodos que exijam testes.✨
+
+  - Um objeto simples, usado para transportar dados entre diferentes camadas do sistema (por exemplo, entre a camada de serviço e a de apresentação, ou entre cliente e servidor).
+  - Normalmente contém apenas atributos, construtores e getters/setters.
+  - Não deve conter lógica de negócios — isso fica na camada de serviço ou domínio.
+  - Também não deve ter métodos complexos que necessitem de testes unitários específicos, já que a ideia é que seja apenas um “pacote de dados”.
+
+Normalmente, seus modelos (usando o padrão MVC) são modelos inteligentes e podem conter vários/alguns métodos que realizam operações diferentes para aquele modelo específico (não lógica de negócios, isso deve 
+estar nos controladores). No entanto, ao transferir dados (por exemplo, chamando um endpoint REST ( GET// POSTqualquerqueseja) de algum lugar, ou consumindo um webservice usando SOA, etc.), você não quer 
+transmitir o objeto grande com código que não é necessário para o endpoint, pois isso consumirá dados e tornará a transferência mais lenta.
+
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+Referencias Bibliograficas: 
+_____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+1. https://www.linkedin.com/posts/vsalessandra_dtos-activity-7366061682017640449-1TDn/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACPsS3MB9M10JeKzPox2M0Xth-9ZxhU9yOg
+
+2. https://stackoverflow.com/questions/1051182/what-is-a-data-transfer-object-dto 
