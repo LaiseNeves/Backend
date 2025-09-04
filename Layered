@@ -14,7 +14,59 @@ Aplicação / Serviço: Orquestra a lógica entre apresentação e domínio.
 Domínio / Negócio: Contém regras de negócio puras, entidades, serviços de domínio etc.
 Infraestrutura / Acesso a dados: Comunicação com banco de dados, serviços externos, armazenamento etc.
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Configurações Físicas Possíveis
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+As camadas lógicas podem ser organizadas em diferentes configurações físicas:
+
+1. Camadas lógicas em um único processo (monolito)
+Todas as camadas estão no mesmo servidor/aplicação. Por isso, é simples de implantar, testar e depurar, mas é pouco escalável. 
+
+2. Separação em múltiplos processos (ex: API + banco separado)
+UI em um processo, lógica de aplicação em outro, banco em outro. Esse formato melhora a escalabilidade e isolamento, mas aumenta a complexidade de deploy e comunicação.
+
+3. Distribuição por serviços (microserviços)
+Cada camada lógica ou funcionalidade é um serviço separado (ex: front-end, gateway, serviço de pagamentos, serviço de produtos). Esse formato traz alta escalabilidade e independência de deploy. 
+Porém. é muito maior a complexidade de orquestração, observabilidade e versionamento.
+
+4. Camadas combinadas (ex: front + lógica juntos)
+Em algumas soluções (ex: serverless, JAMstack), a apresentação e lógica podem estar no mesmo lugar. Por isso, esse modelo é rápido de desenvolver e hospedar. 
+Mas ele pode limitar separação de responsabilidades e reutilização.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Vantagens da arquitetura em camadas
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Com o uso dessa arquitetura, há uma separação de responsabilidades, pois facilita o entendimento, manutenção e evolução do sistema.
+
+(...)
+
+2. Também é possível realizar a reutilização de código, na qual camadas como a de acesso a dados podem ser reutilizadas por diferentes partes do sistema.
+
+3. Esse estilo arquitetural pode melhorar a testabilidade, isso porque os componentes podem ser testados isoladamente com mocks ou stubs das outras camadas.
+
+4. Há também melhoria na facilidade de manutenção, pois mudanças em uma camada, se bem isoladas, não afetam diretamente as outras.
+
+5. (...) a escalabilidade organizacional é uma vantagem, isso porque equipes podem trabalhar de forma paralela em diferentes camadas (ex: front-end e back-end).
 
 
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Desvantagens da arquitetura em camadas
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1. Uma desvantagem é que pode haver overhead de chamadas entre camadas, especialmente se muitas camadas forem distribuídas fisicamente. Isso comprometeria a performance sistêmica.
+
+2. (...) esse estilo arquitetural possui certa rigidez, pois às vezes força uma passagem artificial de dados entre camadas, mesmo quando não é necessário.
+
+3. Podem ocorrer dificuldades em mudanças transversais, pois as alterações que atravessam várias camadas (ex: rastreamento, auditoria) podem ser mais complexas.
+
+4. Esse modelo de Arquitetura exige planejamento cuidadoso e se não for bem pensada pode atrasar entregas iniciais em projetos com prazos curtos.
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Referencias bibliográficas: 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 https://medium.com/@deutnerg/arquitetura-backend-a-arquitetura-em-camadas-01368fc13797
