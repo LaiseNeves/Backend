@@ -132,11 +132,65 @@ minio cli commands
 O MinIO Client (mc) fornece uma interface de linha de comando para interagir com implantações do MinIO e outros serviços compatíveis com S3. 
 Ele oferece uma ampla variedade de comandos para gerenciar buckets, objetos, usuários e políticas.
 
-- Operações Básicas:
----> mc alias set: Define um alias para um servidor MinIO ou serviço compatível com S3.
+Basic Operations:
+mc alias set: Sets an alias for a MinIO server or S3-compatible service.
+Código
 
-      mc alias set myminio http://localhost:9000 accesskey secretkey
+    mc alias set myminio http://localhost:9000 accesskey secretkey
 
+mc ls: Lists buckets or objects within a bucket.
+Código
+
+    mc ls myminio
+    mc ls myminio/my-bucket/
+mc mb: Creates a new bucket.
+Código
+
+    mc mb myminio/new-bucket
+mc cp: Copies files or objects to/from MinIO or between buckets.
+Código
+
+    mc cp local-file.txt myminio/my-bucket/
+    mc cp myminio/my-bucket/object.txt /local/path/
+mc mirror: Synchronizes content between directories or buckets.
+Código
+
+    mc mirror local-dir/ myminio/my-bucket/
+    mc mirror myminio/source-bucket/ myminio/destination-bucket/
+mc rm: Removes objects from a bucket.
+Código
+
+    mc rm myminio/my-bucket/object-to-remove.txt
+mc rb: Removes one or more buckets.
+Código
+
+    mc rb myminio/bucket-to-remove
+Advanced Operations:
+mc policy: Manages bucket policies (e.g., setting read/write access).
+Código
+
+    mc policy set public myminio/my-bucket
+mc stat: Displays information about an object.
+Código
+
+    mc stat myminio/my-bucket/my-object.txt
+mc find: Searches for objects based on various criteria (e.g., size, modification time, name).
+Código
+
+    mc find myminio/my-bucket --larger 10MiB
+Admin Commands:
+mc admin user: Manages users on a MinIO deployment (e.g., adding, listing, removing users).
+Código
+
+    mc admin user add myminio newuser password123
+mc admin policy: Manages policies for users and groups.
+Código
+
+    mc admin policy add myminio custom-policy /path/to/policy.json
+mc admin service: Manages MinIO server services (e.g., restarting, unfreezing).
+Código
+
+    mc admin service restart myminio
 
 
 
